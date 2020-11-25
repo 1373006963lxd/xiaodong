@@ -1,0 +1,515 @@
+css：
+ 选择器{ 样式}
+ 给谁改样式{改什么样式}
+一般放在head标签中
+选择器---就是给那个标签设置样式
+style标签
+color：xxx；或则#XXXX （十六进制用的最多） rgb（，，，）；  可以用ps吸取颜色看到十六进制的表达形式
+font-size：xxx；
+width
+height
+background-color
+
+标签选择器 标签名{ }
+类选择器（开发常用） 在标签中添加属性class=“类名 类名”（可以放多个类名）  style中定义类  .类名 { }
+id选择器 #di名{ key：value}  id为标签中的id   只能调用一次一个标签的id唯一
+通配符选择器
+  * 所有标签都修改为某一个样式
+
+字体属性：
+font-family：‘宋体’或者‘微软雅黑’
+font-size：    注意标题需要单独设置大小才能有效果
+font-weight：bold  文字加粗  后面加数字700也是加粗，不要加px哦
+           normal或者400 粗体变细，将倾斜的字体转正
+font-style：           italic  文字倾斜 将倾斜的改为正常的normal
+
+line-height   行高  行间距  是由三部分组成：上间距+文本（默认是16px）+下间距
+text-align  文字对齐方式  水平对齐
+text-decoration    none（取消a标签链接下的下划线）、underline、overline、line-through
+font：font-style font-weight fint-size(不可省)/line-height font-family（不可省）; 
+text-indent：  文本段落的首行缩进距离 em为单位一个文字的大小 2em
+
+内部样式表----就是在head标签中添加style标签的形式
+行内样式表---直接在标签中添加样式适用于简单的样式（少）
+外部样式表----开发最常用的单独新建一个css文件
+  单独的css文件只有样式，没有标签
+  然后将css文件引入到页面中---<link rel="stylesheet" href="css文件路径">--放在head标签中
+<hr>  水平线
+chrome调试
+ctrl+滚轮----放大
+ctrl+0  ----复原浏览器的大小
+emmet语法使得书写代码快捷
+    标签名+tab即可使得标签成对出现
+    标签名*n + tab  即可生成n个这样的标签对
+    ul>li  ul包含li  即可生成父子级标签
+    div+p  并行关系  即可生成兄弟级别的标签
+    .类名     #id名
+    div{}    div{}*5    div{$}*5
+    $（自增的意思）
+css样式--采用简写的形式即可快速生成  首字母+value 即可
+生成
+
+格式化代码---shift+alt+f    
+
+复合选择器：
+   后代选择器（重要）---会使得所有后代一样的标签都被修改
+       ol li{key：value } 多个个标签空格分开 且父子标签关系  任意基础选择器的组合   .nav li a { }
+    子选择器
+      .nav>a { }
+   
+     并集选择器--如果一样的样式可以选择多个标签修改样式
+      div，p {key：value}   div,p,.pig li {key: value}
+  
+伪类选择器
+     链接伪类：鼠标放在某一链接上颜色修改 LVHA的顺序不能颠倒
+     a:link{ }--未被访问的链接
+     a:visited{ }----访问后的链接
+     a:hover{ }----鼠标经过后链接样式---一般只用这一个
+     a:active{ }---鼠标按下去还没松开的样式
+给链接指定样式一定要单独给a指定样式不能给父类不显示效果
+      focus伪类选择器---主要针对input标签
+      有光标则成为焦点样式
+         input：foucus{background-color： }
+ 
+
+元素显示模式：h、ol、ul、li、div、p标签
+  块元素：独占一行、高度宽度外边距设置、默认100%占行、容器盒子
+  文字标签中不能再套块元素比如p中不能再放div
+
+  行内元素：a、strong、b、em、del、span
+  特点：一行可以显示多个、高宽直接设置无效、默认宽度就是内容本身、行内元素只能容纳文本或则其他行内元素
+  特殊：a标签可以存放块级元素
+  如何给行内元素设置宽和高？
+      css设置  display：block；转化为块级元素
+  如何将块级元素转化为行内元素？
+      display：inline
+
+
+  行内块元素：img input td
+  特点：一行可以放多个、可以设置高度和宽度、默认宽度就是内容宽度
+  如何转化为行内元素转化行内快元素？
+       display（转换的意思）：inline-block
+
+  插件使用snap：f1\f3\esc\alt不松开然后按c取色
+
+单行文字垂直居中： 文字行高line-height==盒子行高height
+  
+背景图片：
+background-color
+background-image：url（url）
+background-repeat：默认repeat可以设置no-repeat、repeat-x、repeat-y 沿着xy轴平铺
+background-position：水平 垂直（left、center、right）也可以是精确数值第一个肯定是x，第二个肯定是y
+background-attachment---背景图像固定  
+      值：scroll（随鼠标滚动）、fixed（固定）
+复合性写法：背景颜色 背景图片 背景平铺 背景滚动 背景位置
+
+背景透明写法：background：rgba（） 最后一个a是透明度0-1取值
+
+
+css的三大特性：层叠性（样式冲突就近原则不冲突不层叠）、继承性（继承父类标签的某些样式-text、font、color）、优先级（选择器相同，则执行层叠性。选择器不同，则执行优先继承选择器0000《元素选择器0001《类选择器、伪类选择器（0010）《id选择器0100
+复合选择器会有权重叠加的问题
+级）
+
+ 盒子模型组成：
+    border（宽度、线的样式、颜色）边框、content内容、padding内边框、margin外边    框（盒子与盒子之间的距离）
+    位置分为上下左右：top、left、right、bottom
+    border-width（粗细）、border-style（solid实线、dashed虚线、dotted点线）、border-color
+
+    border-top\border-bottom\等分别设置边框样式
+
+border-collapse：collapse（解决重合实线效果合并相邻边框）
+padding：内容与边框之间的距离
+    padding-left：  、padding-top、padding-right、padding-bottom
+  复合写法： padding：   
+                1个值：上下左右
+                2个值：上下、左右
+                3个值：上、左右、下
+                4个值：上右下左（顺时）
+
+如果盒子设置了宽高，如果再使用padding则会增加宽高长度
+如果盒子不设置宽高，则不会影响。如果设置100%，则会出现滚动条
+
+
+margin（控制盒子与盒子之间的距离）
+       margin-left、margin-right、margin-top、margin-bottom
+复合方式和padding一致
+margin：0 auto  块元素居中  margin：auto  
+行内元素和行内快元素水平居中给其元素添加text-align：center
+
+嵌套快元素垂直外边距的塌陷：
+   可以为父类元素定义上边框
+   可以为父类元素定义上内边距
+   可以为父元素添加overflow：hidden
+清楚默认的内外边距： padding：0、margin：0
+行内元素只设置左右边距即可
+
+ps里面ctrl+r调出尺子测量
+按住空格键可以将鼠标改为小手拖动图片
+
+嵌套的盒子，如果子类大小比父类大，则可以使得子类width为100%即可和父类盒子一样大
+
+倾斜字体或者倾斜符号可以使用： font-style：normal
+ul-li里面前面的小圆点如何去掉--list-style：none
+
+圆角边框：
+
+border-radius：xxxpx-----将盒子四个角化为圆角--原理就是拿着这个半径的圆去和盒子的四个角磨合
+
+border-radius：50%  为宽度的一半   则可以形成圆形
+
+
+border-radius：高度的一半   则圆角矩阵
+
+border-radius：左上、右上、右下、左下
+               左上右下、右上左下
+border-top-left-radius 等分别设置
+
+盒子阴影：
+
+box-shadow：水平阴影、垂直阴影、模糊距离、阴影的尺寸、颜色（rgba）、内还是外阴影（inset、outset不用写）
+
+div：hover { box-shadow： } 鼠标经过后显示样式
+
+
+浮动：布局方式三种
+   标准流---默认的方式排列 ---适用于纵向
+   浮动流：可以让多个块级元素排在一行---适用于横向  可以改变元素标签默认的排列方式
+   定位流：
+
+float：none、left、right
+
+浮动特性：
+   脱离标准流移动到指定的位置
+   不再保留原先的位置
+
+行内元素或者块元素如果加了浮动就具有了行内块特性
+
+块级盒子没有设置宽度，默认和父级一样，如果加了浮动则宽度与内容一样宽度
+
+如何让浮动块放在中间位置？
+    不以浏览器为准，可以将浮动模块放在父盒子中，将其放在中间，然后浮动盒子以父盒子为准
+
+清除浮动？
+由于父级盒子很多情况下，不方便给高度，但是子盒子浮动又不占用位置，最后父级盒子高度为0时，就会影响下面的标准流盒子。
+
+由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响。
+
+
+所以如何清除浮动？
+
+  额外标签法（隔墙法）：--不好用
+      再最后的浮动元素盒子后面添加一个块盒子，然后设置样式  clear：both
+      添加的必须是块级元素
+
+  给父亲添加样式： overflow：hidden  --清除浮动
+
+  .类名:after{
+     content:"";
+     display:block;
+     height:0;
+     clear:both;
+     visibility:hidden;
+    }
+    .类名{ *zoom: 1}
+
+双伪元素清除浮动
+
+ps切图：
+第一种：用移动工具选中图层，再右边有个小眼睛就是选中的图层-右键找到保存为png即可
+
+如果选中多个图层然后选择图层菜单中的合并图层即可实现将两个图层合并到一起
+
+
+ps：
+视图---清除参考线
+ctrl+ + 放大
+ctrl+r标尺测量工具
+吸管工具测量颜色
+
+
+另一种：切片工具选中所有区域，导出web格式直接设置保存格式保存即可--保存的时候选择选中的切片
+
+
+半透明的图片保存为png
+
+PS插件切图---Cutterman
+
+样式书写顺序：
+   布局--自身属性（盒子边框）-文本属性样式--其他样式
+实际开发中我们不会直接用链接a而是用li包含链接（li+a）的做法
+
+行内块元素之间是有缝隙的（加了浮动后就可以没有缝隙）
+
+
+定位：
+  盒子能够自由自在的移动，或则固定在屏幕的某个位置
+
+定位模式：4种    静态、相对、绝对、固定
+   position： static  ---无定位的意思
+   position：relative ---- 相对于它原来的位置来说。---原来的位置依旧占用
+   position：absolute ---- 相对于祖先元素来说的---如果父亲没有定位则以浏览器定位---且不再占用原来的位置
+   position：fixed--固定于浏览器可视窗口的某个位置---不占用原来的位置--跟父亲无关
+
+
+
+如果祖先很多如何确定定位呢？
+  以最近定位祖先为依据
+   
+
+边偏移：上 下 左 右
+   top： bottom： left： right：
+
+子级为绝对定位--不占用位置
+父级为定位而且为相对定位--因为占用位置
+
+子绝父相
+
+
+跟着版心走:
+  1。走浏览器的宽度一半
+  2.margin-left：走版心的一半
+
+粘性定位：
+position：sticky
+占用原先的位置---以浏览器的可视窗口为参照--且必须设置上下左右的一个才生效
+
+定位叠放次序：
+   z-index： 谁的值大谁在最上面
+   只有定位的盒子才有这个属性
+   数字后面不加单位
+
+定位的拓展：
+    绝对定位居中--绝对定位的盒子不能通过margin：0 auto
+
+所以left：50% ---走父级元素的一半
+    margin-left：100px  让盒子向左移动自身宽度的一半
+
+行内元素添加绝对或者相对定位----可以设置宽高
+
+
+
+块级元素不给宽高则为文字的大小。
+
+
+浮动元素不会压住标准流的文字
+相对定位和绝对定位则会压住标准流的文字
+
+并集选择器可以将两个标签的共同样式合并
+
+元素的显示与隐藏：
+    display：none
+        隐藏元素且不再占用原来位置
+    display：block
+        显示元素
+
+    visibility：visible----
+                hidden---隐藏但占用原来位置
+
+
+溢出：
+               overflow：visible--溢出也显示
+                       ：hidden ---将多出来的内容隐藏
+                       ：scroll--- 显示滚动条--拖着看
+                       ：auto----在需要的时候添加滚动条 
+
+
+
+css高级：
+
+精灵图：
+为了有效的减少服务器接收和发送请求的次数减轻服务器的压力
+
+
+background：url（） no-repeat -xxxpx -xxxpx
+
+多个小图片公用同一张图则需要将共同样式部分抽取出来：
+background：url() no-repeat;
+background-position: xxxxpx xxxpx
+
+
+
+精灵图的缺点是：修改大小容易失真
+
+字体图标：
+   本质是文字可以修改大小，颜色等样式，且不会有失真的问题
+   兼容性好（所有浏览器）
+   轻量级
+
+字体图标的下载：
+  icomoon字库、阿里iconfont字库
+  在网站中选择要下载的图标--点击下面右下角的生成字体图标---然后点击下载
+
+ 如果想要在原来的基础上再导入新的图标-
+点击importicon 选择原来文件夹中的selection.json文件即可将原来的加载进来且可以添加新的图标
+引入：
+ 1、将下载的压缩包里面fonts文件夹（里面有4个文件起到了兼容性问题）放在html页面的根目录下
+ 2、引入到页面进行字体声明（复制即可）
+
+ 3、页面-- 打开文件中demo.html找到对应的图标，将右下角的小方框复制到页面
+ 4、对标签进行样式font-family：xxxx（和样式声明中一样的名字）
+
+三角制作：
+{
+ width：0；
+ height：0；
+ border：50px solid transparent；
+ border-left-color：pink---箭头方向left
+}
+为了兼容性需要添加：
+  line-height： 0；
+  font-size：0
+
+鼠标样式：
+cursor：default  箭头
+cursor：pointer 小手
+cursor：move 十字架
+cursor：text  文本
+cursor：not-allowed 禁止符号
+
+取消表单（input）的轮廓线： outline：none
+
+
+取消文本右下角的拖拽：resize：none
+
+
+图片文字对齐方式：--针对行内元素和行内块元素
+
+vertical-align：bottom（底线）
+               middle（中线对齐）
+               top（顶部对齐）
+
+图片低侧空白空隙：
+         取消方式 vertical-align：bottom top  middle
+
+溢出的文字用省率号代替：
+     单行文本溢出：
+       white-space：normal --- 如果文字显示不开，自动换行
+      white-space：nowrap  ---如果显示不开，强制一行内显示
+      溢出部分隐藏： overflow：hidden
+      text-overflow：ellipsis   溢出部分省略号显示
+      
+      多行文本溢出显示省略号：
+       了解即可--最好后端人员处理
+
+z-index 提高层级
+
+
+文字会围绕着浮动图片
+
+css三角强化：
+
+
+
+HTML5和CSS3的新特性：
+位置标签：header  aside
+
+视频标签：
+ <video src=“” controls=“controls”>
+  属性：
+   autoplay--自动播放
+   muted---chrome加了这个属性也会自动播放，如果不加这个属性无法播放
+       
+可以对video标签进行设置宽高样式
+
+    loop-----循环播放
+    poster---加载等待的画面图片
+
+    src---视频文件
+
+音频标签：
+   <audio src=" " controls="">
+   属性：
+   autoplay---自动播放
+   controls---音频控件
+   loop---循环
+   src--音频路径
+
+input新增类型：---必须添加form表单域
+ email、url、dae、time、month、number、search、submit、tel、color
+
+  属性：
+   required--必须写内容
+   placeholder---表单中自动带有的文本
+   autofocus---自动获得焦点
+   autocomplete---之前搜索过的内容被记录  off 或则on
+   multiple---可以选择多个
+
+css3的新特性：
+
+属性选择器：-----权重10
+   标签[属性]{ }
+   标签[属性=xxx]{  }--重点
+
+   标签[属性^="开头的字母"]
+   标签[属性$="结尾的字母"]
+   标签[属性*="只要有这些字母就被选中"]
+
+
+结构伪类选择器：
+   ul ：first-child{  } ----ul中的第一个孩子
+   ul ：last-child{  }-----ul中的最后一个
+   ul：nth-child（第几个孩子）{ }---任意选择ul中的第几个孩子
+   ul：nth-child（even）偶数孩子选择出来                odd  奇数孩子            ul：nth-child（n）---则从0开始选中所有的孩子
+   （可以跟公式）--- 2n+1、2n  n从0开始
+    nth-child（1）--是将所有的孩子都编号，然后找到指定位置的标签孩子再看是否和：前面的标签匹配，如果不匹配则不显示。
+   nth-of-type（）--会直接跟：前面的指定的标签的孩子排序 
+
+
+为元素选择器：---行内元素--不属于标签--解决嵌套问题---必须有content样式
+    标签：：before{content：}
+    标签：：after{content：}  在标签内容的后面加内容xxxx
+
+伪元素字体图标：---也是一个盒子-行内元素
+          
+   div::after{
+      position:absolute;
+      right:20px;
+      top: 10px;
+      content:'\e91e';
+      font-size: 20px;
+   }
+
+.tudou:hover::before{ }
+   鼠标经过土豆这个盒子就让里面的before遮罩层显示出来
+
+为元素清除浮动
+
+额外标签法：
+   有两种方式一种：只在后面添加一个块级元素。另一种是在前面和后面添加块级元素。
+核心属性为 clear：both；
+
+
+.clearfix:before,.clearfix:after{
+    content:"";----内容为空
+    display:table;---表格元素使得在一行显示
+    clear：both；----清除浮动
+}
+
+
+
+盒子模型：
+  box-sizing：border-box；--还是之前width的（padding、border）宽度添加其他元素不会影响大小
+  解决了之前通过加减的方式
+
+filter滤镜---
+   filter：blur（数值）；---值越大越模糊blur为函数名
+  
+width：calc（运算公式） 加减乘除
+
+
+css3过度：（重点）
+   transition：要过度的属性（width）  花费时间（s）  运动曲线（ease）   何时开始s
+  对多个属性加效果 逗号分隔开
+
+
+      
+谁做过度给谁加   
+
+
+移动：
+
+transform:translate(x,y);
+transform: translateX(n)
+transform: translateY(n)
+
+特点：不会影响其他元素的位置

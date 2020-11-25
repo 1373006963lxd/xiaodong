@@ -1,0 +1,120 @@
+.nav {
+    overflow: hidden;
+}
+.sk {
+    position: absolute;
+    left: 190px;
+    top: 40px;
+    border-left: 1px solid #cc1325;
+    padding: 3px 0 0 14px;
+}
+.sk_list {
+    float: left;
+}
+.sk_list ul li {
+    float: left;
+}
+.sk_list ul li a {
+    display: block;
+    line-height: 47px;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+.sk_con {
+    float: left;
+}
+.sk_con ul li {
+    float: left;
+}
+.sk_con ul li a {
+    display: block;
+    line-height: 49px;
+    padding: 0 20px;
+    font-size: 14px;
+}
+.sk_con ul li:last-child a::after {
+    content: "\e91e";
+    font-family: 'icomoon';
+
+}
+.sky_hd img{
+    width: 1200px;
+    height: 110px;
+}
+.sky_bd ul li {
+    overflow: hidden;
+    float: left;
+    margin-right: 13px;
+    width: 290px;
+    height: 460px;
+    /* background-color: pink; */
+    border: 1px solid transparent;
+}
+.sky_bd ul li img {
+    width: 100%;
+}
+.sky_bd ul li p {
+    text-align: center;
+}
+.sky_bd ul li i h1,h3 {
+    display: inline;
+    margin-right: 10px;
+}
+.sky_bd ul li .i2 {
+    display: inline;
+    color: #a3a3a3;
+    text-decoration: line-through;
+}
+.desc {
+    width: 268px;
+    height: 98px;
+    margin: 13px;
+}
+.money {
+    width: 268px;
+    height: 35px;
+    margin-bottom: 10px;
+}
+.sky_bd ul li .i1 {
+    color: #ed2a30;
+}
+.sky_bd ul li:nth-child(4n) {
+    margin-right: 0;
+}
+.sky_bd ul li:hover {
+    border: 1px solid #cc1325;
+}
+.yu , .yu p ,.yu div{
+    float: left;
+}
+.yu .du {
+    width: 133px;
+    height: 14px;
+    margin: 0 11px;
+    border-radius: 7px;
+    background-color: #feffff;
+    border: 1px solid #cc1325;
+}
+.yu .du .progress-bar {
+    height: 100%;
+    width: 87%;
+    background-color:  #cc1325;
+}
+.yu p {
+    font-size: 12px;
+}
+.btn {
+    font-size: 16px;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+    color: #feffff;
+    background-color:  #cc1325;
+}
+/* .more::after {
+     content: "\e91e";
+     font-family: 'icomoon';
+} */
